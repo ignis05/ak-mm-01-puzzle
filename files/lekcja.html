@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <script>
+var auto={
+        abs : true,
+        door : 4,
+        jazda : function(){
+                alert("hohoho");
+        },
+        init : function(){
+                this.get_door();
+                this.insert_div();
+        },
+        get_door : function(){
+                console.log(auto.door, this.door, this);
+        },
+        insert_div : function(){
+                var el=document.createElement("div");
+                el.innerText="LOL";
+                //var that=this;
+                //el.onclick=function(){
+                el.onclick= (e) => {
+                        //console.log(this.door, this)
+                        //console.log(that.door, that)
+                        console.log("||",this);
+                        e.target.innerText = " TY DZBANIE!!!"
+                }
+                document.body.appendChild(el);
+        }
+}
+ 
+ 
+document.addEventListener("DOMContentLoaded", function(){
+        var img=new Image();
+        img.src="https://static4.depositphotos.com/1007101/382/i/950/depositphotos_3825358-stock-photo-happy-killer-whale.jpg"
+        img.onload=function(){
+                //console.log(this.width);
+        }
+        document.body.appendChild(img);
+        //auto.jazda();
+        //console.log(auto.door);
+        auto.init();
+});
+        </script>
+</head>
+<body>
+        
+</body>
+</html>
